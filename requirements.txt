@@ -22,9 +22,5 @@ Werkzeug==3.0.1
 python-dotenv
 langchain
 psycopg2
-os
 pyspark
 regex
-os-sys
-python-time
-TIME-python
