@@ -24,25 +24,25 @@ app.register_blueprint(main_bp)
 
 logging.basicConfig(level=logging.INFO)
 
-@app.route('/InteractiveInsights', methods=['POST'])
-def InteractiveInsights_Output():
-    try:
-        body = request.json
-        print("Step1 Successful")
-        if InteractiveInsightsDTO.validatePayload(body):
-            q = InteractiveInsightsDTO.instance_from_flask_body(body)
-            logging.info(q)
-            print(body)
-            result = genAIOutput(body["query"])
-            if 'error' in result:
-                return jsonify(result), 500
-            return jsonify(result), 200
-    except Exception as e:
-        return jsonify({'error': f'{str(e)}'}), 503
+# @app.route('/InteractiveInsights', methods=['POST'])
+# def InteractiveInsights_Output():
+#     try:
+#         body = request.json
+#         print("Step1 Successful")
+#         if InteractiveInsightsDTO.validatePayload(body):
+#             q = InteractiveInsightsDTO.instance_from_flask_body(body)
+#             logging.info(q)
+#             print(body)
+#             result = genAIOutput(body["query"])
+#             if 'error' in result:
+#                 return jsonify(result), 500
+#             return jsonify(result), 200
+#     except Exception as e:
+#         return jsonify({'error': f'{str(e)}'}), 503
         
 
 if __name__ == "__main__":
     app.run(debug=True)
 
-from controller import user_controller
+# from controller import user_controller
 
