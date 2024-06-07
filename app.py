@@ -16,7 +16,7 @@ CORS(app, resources={r"*": {"origins": "*", "methods": ["GET", "POST", "PUT", "D
 
 main_bp = Blueprint("main", __name__)
 
-@app.route("/")
+@main_bp.route("/")
 def home():
     return "The server responded successfully", 200
 
